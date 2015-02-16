@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+	<script type="text/javascript">
+	function validar() {
+		email = document.getElementById("newletterForm:email");
+		if (email.value == "") {
+			alert("informe seu e-mail...");
+			return false;
+		}
+		return true;		
+	}
+</script>
+<style>
+	.campo{
+		background-color: black;
+		padding: 10px;
+		color: white;
+	}
+	.campo:FOCUS {
+		background-color: orange;
+		color:  green;
+	}
+</style>
+</h:head>
+<body>
+	
+	<h:form id="newletterForm">
+		<h:outputLabel value="Assine nossa newsletter" rendered="false"/>
+		<br/>
+		
+		<h:inputText value="Seu e-mail aqui"
+			size="40" maxlength="30" title="Informe seu e-mail aqui"
+			onfocus="this.value=''" id="email"
+			style="font-size:28px" styleClass="campo"/>
+		
+		<h:commandButton value="Assinar" onclick="return validar();" id="assinar"/>
+	</h:form>
+</body>
+</html>
